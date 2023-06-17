@@ -17,6 +17,8 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 - Enable downloading multiple apps within the same search, without the need to search again
 - Show a progress bar for the downloads in the terminal.
 - Downloaded app will be renamed using the app name, rather than the app ID.
+
+  
 .... More coming in future No **ETA**.
 
 
