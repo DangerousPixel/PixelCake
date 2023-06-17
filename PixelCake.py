@@ -7,79 +7,65 @@ from urllib.request import urlretrieve
 from tqdm import tqdm
 import math
 from time import time
-import webbrowser
+from webbrowser import open as wbopen
+
 
 def download_speed_time(start_time, downloaded_size):
-    elapsed_time = time() - start_time
-    return downloaded_size / elapsed_time
+    return downloaded_size / (time() - start_time)
 
 
 def estimated_time_left(total_size, downloaded_size, start_time):
-    remaining_size = total_size - downloaded_size
-    speed = download_speed_time(start_time, downloaded_size)
-    return remaining_size / speed
+    return (total_size - downloaded_size) / download_speed_time(start_time, downloaded_size)
 
 
 def search_apps(app_name):
-    url = f"https://apiv2.iphonecake.com/appcake/appcake_api/spv6/appsearch_r.php?device=1&q={app_name}&p=0"
-    payload = ""
-    headers = {
+    return requests.post(f"https://apiv2.iphonecake.com/appcake/appcake_api/spv6/appsearch_r.php?device=1&q={app_name}&p=0", headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
         "User-Agent": "appcakej/7.0.4 (iPhone; iOS 13.6.1; Scale/3.00)",
         "Connection": "close",
         "Host": "apiv2.iphonecake.com",
         "Accept-Encoding": "gzip, deflate",
         "Cache-Control": "max-age=0"
-    }
-    response = requests.request("POST", url, data=payload, headers=headers)
-    return response.json().get("list", [])
+    }).json().get("list", [])
+
 
 def get_ipa_link(app_id):
-    url = f"https://apiv2.iphonecake.com/appcake/appcake_api/ipastore_ios_link.php?type=1&id={app_id}"
-    payload = ""
-    headers = {
+    return requests.get(f"https://apiv2.iphonecake.com/appcake/appcake_api/ipastore_ios_link.php?type=1&id={app_id}", headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
         "User-Agent": "appcakej/7.0.4 (iPhone; iOS 13.6.1; Scale/3.00)",
         "Connection": "close",
         "Host": "apiv2.iphonecake.com",
         "Accept-Encoding": "gzip, deflate",
         "Cache-Control": "max-age=0"
-    }
-    response = requests.request("GET", url, data=payload, headers=headers)
-    return response.json()["link"]
+    }).json()["link"]
+
 
 def on_search_click():
     app_name = app_name_entry.get()
     app_list = search_apps(app_name)
     app_listbox.delete(0, tk.END)
 
-    bg_color = "#1D0748"
-    fg_color = "yellow"
-    noR_bg_color = "red"
-    noR_fg_color = "white"
-    r_bg_color = "1D0748"
-    r_fg_color = "white"
-
     if not app_list:
         app_listbox.insert(tk.END, "No results")
-        app_listbox.itemconfig(tk.END, bg=noR_bg_color, fg=noR_fg_color)
+        app_listbox.itemconfig(tk.END, bg="red", fg="white")
     else:
         for app in app_list:
             app_listbox.insert(tk.END, f"{app['name']} ({app['ver']}) - ID: {app['id']}")
-            app_listbox.itemconfig(tk.END, bg=bg_color, fg=fg_color)
-            
+            app_listbox.itemconfig(tk.END, bg="#1D0748", fg="yellow")
+
+       
 def on_download_click():
     selected_app = app_listbox.get(app_listbox.curselection())
     if selected_app:
         app_id = selected_app.split("ID: ")[1]
-        ipa_link = get_ipa_link(app_id)
-        ipa_name = selected_app.split(" (")[0] + ".ipa"
+        ipa_name = f"{selected_app.split(' (')[0]}.ipa"
         
         download_path = os.path.join(os.path.expanduser("~"), "Downloads")
-        download_ipa(ipa_link, download_path, ipa_name)
+        download_ipa(get_ipa_link(app_id), download_path, ipa_name)
         messagebox.showinfo("Download Complete", f"{ipa_name} downloaded successfully in {download_path}.")
     else:
         messagebox.showwarning("No App Selected", "Please select an app to download.")
+
 
 def download_ipa(url, save_path, file_name):
     destination = os.path.join(save_path, file_name)
@@ -115,16 +101,19 @@ def download_ipa(url, save_path, file_name):
             )
 
     progress_bar.close()
-    if total_size != 0 and progress_bar.n != total_size:
+    if total_size and progress_bar.n != total_size:
         print("Error while downloading the IPA file.")
     else:
         print("Download complete.")
-        
+
+
 def open_dpixel_store():
-    webbrowser.open("https://dpixel.co", new=1)
+    wbopen("https://dpixel.co", new=1)
+
 
 def open_telegram_channel():
-    webbrowser.open("https://t.me/dpixel", new=1)
+    wbopen("https://t.me/dpixel", new=1)
+
 
 root = tk.Tk()
 root.title("PixelCake - By : DPixelStore")
