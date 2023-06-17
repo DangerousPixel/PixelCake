@@ -41,4 +41,4 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 
 ## Thanks To
 
-[0xfff0800/Checkra1n-app](https://github.com/0xfff0800/Checkra1n-app) -> for the APIs
+[0xfff0800](https://github.com/0xfff0800/Checkra1n-app) -> for the APIs
