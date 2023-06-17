@@ -1,6 +1,6 @@
 # PixelCake
 
-#### Is a GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake website, based on **0xfff0800**/Checkra1n-app Project.
+#### A GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake, based on **0xfff0800**/Checkra1n-app Project.
 
 ## Disclaimer
 
@@ -13,16 +13,18 @@
 - Show all search results rether than only first 5.
 - Empty search will list featured apps.
 - Select app to direcly download.
-- You can download other apps in same search no need to search again
-- Progress bar (will show in terminal)
-
+- Enable downloading multiple apps within the same search, without the need to search again
+- Show a progress bar for the downloads in the terminal.
+- Downloaded app will be renamed using the app name, rather than the app ID.
+.... More coming in future No **ETA**.
 
 
 ## Documentation
 
-- You will need to give requirements script full prevliages to run properly by running **chmod +x requirements.sh** , which will check for **Homebrew** and **Python**, then will install all needed libs.
+- To run the requirements script properly, you will need to give it full privileges by executing ```chmod +x requirements.sh``` .
+  This script will check for Homebrew and Python, and then install all necessary libraries.
 
-- After requirements.sh finishes, just run **PixelCake.py** normally.
+- After requirements.sh finishes, just run ```python3 PixelCake.py```
 
 
 ## Links
