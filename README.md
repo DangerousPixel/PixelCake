@@ -26,7 +26,7 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 
 - To run the requirements script properly, you will need to give it full privileges by executing ```chmod +x requirements.sh``` .
 
-  This script will check for Homebrew and Python, and then install all necessary libraries.
+  This script will check Homebrew and Python, and then install all necessary libraries.
 
 - After running requirements.sh , just run ```python3 PixelCake.py```
 
