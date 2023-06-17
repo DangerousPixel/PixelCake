@@ -1,7 +1,7 @@
 # PixelCake
 
-#### A GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake.
-#### based on **0xfff0800**/Checkra1n-app Project.
+A GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake.
+
 
 ## Disclaimer
 
