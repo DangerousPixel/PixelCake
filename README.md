@@ -19,7 +19,7 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 - Downloaded app will be renamed using the app name, rather than the app ID.
 
   
-.... More coming in future No **ETA**.
+.... More coming in future [**No ETA**] .
 
 
 ## Documentation
