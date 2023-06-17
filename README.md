@@ -33,7 +33,7 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 
 ## Links
 
-[Website](https://t.me/dpixel).
+[Website](https://dpixel.co).
 
 [Telegram](https://t.me/xdanpixel).
 
