@@ -1,14 +1,3 @@
-
-# PixelCake
-
-### Is a GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake website, based on **0xfff0800**/Checkra1n-app Project.
-
-### - Disclaimer : 
-#### This was made solely for educational purposes, and the end-user takes all responsibilities if used in bad way.
-
-
-
-
 # PixelCake
 
 #### Is a GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake website, based on **0xfff0800**/Checkra1n-app Project.
