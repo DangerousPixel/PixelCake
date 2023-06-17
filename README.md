@@ -12,7 +12,7 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 
 
 
-## features
+## Features
 
 - Show all search results rether than only first 5.
 - Empty search will list featured apps.
@@ -30,6 +30,8 @@ A GUI python app used to be an *.ipa downloader, which downloads apps/games from
 - To run the requirements script properly, you will need to give it full privileges by executing ```chmod +x requirements.sh``` .
 
   This script will check Homebrew and Python, and then install all necessary libraries.
+
+- After giving privileges, run ```sh requirements.sh``` . (Remember to cd to file path).
 
 - After running requirements.sh , just run ```python3 PixelCake.py```
 
