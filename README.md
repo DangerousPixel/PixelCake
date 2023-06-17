@@ -2,7 +2,7 @@
 
 A GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake.
 
-[[https://i.ibb.co/zSK0mwy/Pixel-Cake.gif|alt=PixelCake]]
+[https://i.ibb.co/zSK0mwy/Pixel-Cake.gif|alt=PixelCake]
 
 ## Disclaimer
 
