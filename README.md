@@ -2,12 +2,14 @@
 
 #### Is a GUI python app used to be an *.ipa downloader, which downloads apps/games from iphoneCake website, based on **0xfff0800**/Checkra1n-app Project.
 
-### Disclaimer
-#### This has been created exclusively for educational purposes, and the end-user assumes all responsibilities if utilized improperly.
+## Disclaimer
+
+ This has been created exclusively for educational purposes, and the end-user assumes all responsibilities if utilized improperly.
 
 
 
-### features
+## features
+
 - Show all search results rether than only first 5.
 - Empty search will list featured apps.
 - Select app to direcly download.
@@ -24,6 +26,7 @@
 
 
 ## Links
+
 [Website](https://t.me/dpixel).
 
 [Telegram](https://t.me/xdanpixel).
